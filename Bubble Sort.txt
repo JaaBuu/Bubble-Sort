@@ -1,0 +1,55 @@
+Module Module1
+
+    Sub Main()
+        Dim Choice As String
+        Dim Numbers(5) As Integer
+        Numbers(1) = 6373
+        Numbers(2) = 77372
+        Numbers(3) = 4
+        Numbers(4) = 1
+        Numbers(5) = 838246
+
+        For i = 1 To 5
+            Console.WriteLine(Numbers(i))
+        Next
+
+        Console.WriteLine("Would you like to sort out these numbers : Type Yes or No ")
+        Choice = Console.ReadLine
+
+        If Choice = "Yes" Then
+            Call BubbleSort(Numbers)
+            Console.WriteLine("                                                                                ")
+            For i = 1 To 5
+                Console.WriteLine(Numbers(i))
+            Next
+        ElseIf Choice = "No" Then
+            Console.WriteLine("Okay")
+        End If
+
+
+        Console.ReadKey()
+    End Sub
+
+
+    Sub BubbleSort(NumbersToSort() As Integer)
+
+        'bubble sort   
+        Dim TempHolder As Integer
+        For iPass = 1 To NumbersToSort.Length - 1
+            For i = 1 To NumbersToSort.Length - 2
+                If NumbersToSort(i) > NumbersToSort(i + 1) Then
+                    TempHolder = NumbersToSort(i)
+                    NumbersToSort(i) = NumbersToSort(i + 1)
+                    NumbersToSort(i + 1) = TempHolder
+                End If
+            Next i
+        Next iPass
+
+
+    End Sub
+
+
+
+
+
+End Module
